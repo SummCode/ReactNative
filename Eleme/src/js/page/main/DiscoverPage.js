@@ -5,10 +5,9 @@ import StyleUtils from '../../util/StyleUtils'
 
 
 
-export default class HomePage extends React.Component {
+export default class DiscoverPage extends React.Component {
 
-   
-
+    
     render() {
         return (
             <View style={StyleUtils.container}>
@@ -18,7 +17,7 @@ export default class HomePage extends React.Component {
                     translucent={true}
                     barStyle={'light-content'} />
 
-                <Text style={StyleUtils.container}>Home Page</Text>
+                <Text style={StyleUtils.container}>Discover Page</Text>
             </View>
         );
     }

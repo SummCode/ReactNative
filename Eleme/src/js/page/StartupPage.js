@@ -40,5 +40,6 @@ export default class StartUpPage extends React.Component {
 const styles = StyleSheet.create({
     startup: {
         flex: 1,
+        backgroundColor:'white'
     }
 });

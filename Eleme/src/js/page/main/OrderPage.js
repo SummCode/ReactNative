@@ -5,7 +5,7 @@ import StyleUtils from '../../util/StyleUtils'
 
 
 
-export default class HomePage extends React.Component {
+export default class OrderPage extends React.Component {
 
    
 
@@ -18,7 +18,7 @@ export default class HomePage extends React.Component {
                     translucent={true}
                     barStyle={'light-content'} />
 
-                <Text style={StyleUtils.container}>Home Page</Text>
+                <Text style={StyleUtils.container}>Order Page</Text>
             </View>
         );
     }
