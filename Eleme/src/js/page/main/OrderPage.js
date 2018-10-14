@@ -18,7 +18,7 @@ export default class OrderPage extends React.Component {
                     translucent={true}
                     barStyle={'light-content'} />
 
-                <Text style={StyleUtils.container}>Order Page</Text>
+                <Text>Order Page</Text>
             </View>
         );
     }

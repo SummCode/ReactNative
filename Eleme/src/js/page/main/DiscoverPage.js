@@ -17,7 +17,7 @@ export default class DiscoverPage extends React.Component {
                     translucent={true}
                     barStyle={'light-content'} />
 
-                <Text style={StyleUtils.container}>Discover Page</Text>
+                <Text>Discover Page</Text>
             </View>
         );
     }

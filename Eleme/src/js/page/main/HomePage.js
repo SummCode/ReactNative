@@ -7,18 +7,20 @@ import StyleUtils from '../../util/StyleUtils'
 
 export default class HomePage extends React.Component {
 
-   
+
 
     render() {
         return (
             <View style={StyleUtils.container}>
+
                 <StatusBar
                     hidden={false}
                     backgroundColor={'#008CF0'}
                     translucent={true}
                     barStyle={'light-content'} />
 
-                <Text style={StyleUtils.container}>Home Page</Text>
+                <Text>Home Page</Text>
+
             </View>
         );
     }
