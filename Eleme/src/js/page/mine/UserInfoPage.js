@@ -1,13 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import {StyleSheet, Text, View, StatusBar} from 'react-native';
 
 import StyleUtils from '../../util/StyleUtils'
 
 
-
-export default class OrderPage extends React.Component {
-
-   
+export default class UserInfoPage extends React.Component {
 
     render() {
         return (
@@ -15,10 +12,10 @@ export default class OrderPage extends React.Component {
                 <StatusBar
                     hidden={false}
                     backgroundColor={'#008CF0'}
-                    translucent={true}
-                    barStyle={'light-content'} />
+                    translucent={false}
+                    barStyle={'light-content'}/>
 
-                <Text>Order Page</Text>
+                <Text>User Info Page</Text>
 
             </View>
         );
