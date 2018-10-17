@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View, StatusBar} from 'react-native';
 
 import StyleUtils from '../../util/StyleUtils'
+import TitleBar from '../../widget/TitleBar'
 
 
 export default class MessagePage extends React.Component {

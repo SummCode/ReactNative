@@ -31,13 +31,13 @@ export default class MinePage extends React.Component {
                         <Text style={styles.title}>我的</Text>
                         <View style={styles.titleIcons}>
 
-                            <TouchableOpacity onPress={() => this.props.navigation.push('Message')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('Message')} activeOpacity={0.8}>
                                 <Image style={styles.titleIcon}
                                        source={require('../../../res/icons/icon_mine_message.png')}/>
                             </TouchableOpacity>
 
 
-                            <TouchableOpacity onPress={() => this.props.navigation.push('Setting')}>
+                            <TouchableOpacity onPress={() => this.props.navigation.push('Setting')} activeOpacity={0.8}>
                                 <Image style={styles.titleIcon}
                                        source={require('../../../res/icons/icon_mine_setting.png')}/>
                             </TouchableOpacity>
@@ -45,62 +45,64 @@ export default class MinePage extends React.Component {
                         </View>
                     </View>
 
-                    <View style={styles.userInfos}>
-                        {/*<TouchableOpacity onPress={() => this.props.navigation.push('UserInfo')}>*/}
-                            <Image style={styles.headPortrait}
-                                   source={require('../../../res/images/img_default_head_portrait.jpg')}/>
-                            <View style={styles.userInfo}>
-                                <Text style={styles.userInfoText}>用户呢称</Text>
-                                <Text style={styles.userInfoText}>176****35</Text>
-                            </View>
-                            <Image style={styles.titleIcon}
-                                   source={require('../../../res/icons/icon_right_arrow.png')}/>
-                        {/*</TouchableOpacity>*/}
-                    </View>
+                    <TouchableOpacity style={styles.userInfos} onPress={() => this.props.navigation.push('UserInfo')}
+                                      activeOpacity={0.8}>
+                        {/*<View style={styles.userInfos}>*/}
+                        <Image style={styles.headPortrait}
+                               source={require('../../../res/images/img_default_head_portrait.jpg')}/>
+                        <View style={styles.userInfo}>
+                            <Text style={styles.userInfoText}>用户呢称</Text>
+                            <Text style={styles.userInfoText}>176****35</Text>
+                        </View>
+                        <Image style={styles.titleIcon}
+                               source={require('../../../res/icons/icon_right_arrow.png')}/>
+                        {/*</View>*/}
+                    </TouchableOpacity>
+
 
                 </View>
 
                 <View style={styles.money}>
 
-                    <View style={styles.moneyItem}>
+                    <TouchableOpacity style={styles.moneyItem} activeOpacity={0.8}>
                         <Image source={require('../../../res/icons/icon_mine_money.png')}/>
                         <Text style={styles.moneyItemText}>钱包</Text>
-                    </View>
+                    </TouchableOpacity>
 
-                    <View style={styles.moneyItem}>
+                    <TouchableOpacity style={styles.moneyItem} activeOpacity={0.8}>
                         <Image source={require('../../../res/icons/icon_mine_red_packet.png')}/>
                         <Text style={styles.moneyItemText}>红包</Text>
-                    </View>
+                    </TouchableOpacity>
 
-                    <View style={styles.moneyItem}>
+                    <TouchableOpacity style={styles.moneyItem} activeOpacity={0.8}>
                         <Image source={require('../../../res/icons/icon_mine_gold_coin.png')}/>
                         <Text style={styles.moneyItemText}>金币</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.list}>
-                    <View style={styles.listItem}>
+                    <TouchableOpacity style={styles.listItem} activeOpacity={0.8}>
                         <Image style={styles.listItemIcon}
                                source={require('../../../res/icons/icon_mine_collection.png')}/>
                         <Text style={styles.listItemText}>我的收藏</Text>
-                    </View>
-                    <View style={styles.listItem}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.listItem} activeOpacity={0.8}>
                         <Image style={styles.listItemIcon}
                                source={require('../../../res/icons/icon_mine_gold_mall.png')}/>
                         <Text style={styles.listItemText}>金币商城</Text>
-                    </View>
-                    <View style={styles.listItem}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.listItem} activeOpacity={0.8}>
                         <Image style={styles.listItemIcon}
                                source={require('../../../res/icons/icon_mine_customer_service.png')}/>
                         <Text style={styles.listItemText}>我的客服</Text>
-                    </View>
-                    <View style={styles.listItem}>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.listItem} activeOpacity={0.8}>
                         <Image style={styles.listItemIcon}
                                source={require('../../../res/icons/icon_mine_business.png')}/>
                         <Text style={styles.listItemText} onPress={() => {
                             ToastAndroid.show('Setting', ToastAndroid.LONG);
                         }}>加盟合作</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
 
 

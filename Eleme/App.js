@@ -2,9 +2,8 @@
  * Eleme App 路由配置
  */
 import React from 'react';
-import {Image, StyleSheet,View} from 'react-native';
+import {Image, StyleSheet, View, BackHandler, AppState, Platform, ToastAndroid} from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
-
 /**
  * 启动页
  */
@@ -116,53 +115,95 @@ const MainTab = createBottomTabNavigator({
             height: 0,
         },
     }
-})
+});
 
+var lastBackPressed = Date.now();
 
-export default App = createStackNavigator({
+export default class App extends React.Component {
+
+    //组件加载之后添加监听
+    componentDidMount() {
+        if (Platform.OS === 'android') BackHandler.addEventListener('hardwareBackPress', App.onBackPressed);
+        AppState.addEventListener('change', App.onAppStateChanged);
+    }
+
+    //组件卸载之前移除监听
+    componentWillUnmount() {
+        if (Platform.OS === 'android') BackHandler.removeEventListener('hardwareBackPress', App.onBackPressed);
+        AppState.removeEventListener('change', App.onAppStateChanged);
+    }
+
+    static onBackPressed() {
+        if (lastBackPressed && lastBackPressed + 2000 >= Date.now()) {
+            BackHandler.exitApp();
+        }
+        lastBackPressed = Date.now();
+        ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
+        return true;
+    }
+
+    static onAppStateChanged() {
+        switch (AppState.currentState) {
+            case "active":
+                console.log("active");
+                break;
+            case "background":
+                console.log("background");
+                break;
+            default:
+
+        }
+    }
+
+    render() {
+        return <RootApp/>
+    }
+}
+
+const RootApp = createStackNavigator({
     StartUp: {
         screen: StartUpPage,
         navigationOptions: {
-            header: null
+            header: null,
         }
     },
     Main: {
         screen: MainTab,
         navigationOptions: {
-            header: null
+            header: null,
         }
     },
     Setting: {
         screen: SettingPage,
         navigationOptions: {
             title: '设置',
-            headerTitleStyle: {flex: 1, textAlign: 'center'},
-            headerRight: (
-                <View/>
-            ),
         }
     },
     Message: {
         screen: MessagePage,
         navigationOptions: {
-            title: '消息',
-            headerTitleStyle: {flex: 1, textAlign: 'center'},
-            headerRight: (
-                <View/>
-            ),
+            title: '通知中心',
         }
     },
     UserInfo: {
         screen: UserInfoPage,
         navigationOptions: {
             title: '个人资料',
-            headerTitleStyle: {flex: 1, alignItems: 'center'},
-            headerRight: (
-                <View/>
-            ),
         }
     },
+}, {
     initialRouteName: 'StartUp',
+    navigationOptions: {
+        headerStyle: {
+            backgroundColor: '#008CF0',
+        },
+        headerTintColor: 'white',
+        headerTitleStyle: {flex: 1, textAlign: 'center', color: 'white', fontSize: 18},
+        headerRight: (
+            <View/>
+        ),
+
+    }
 })
 
 const styles = StyleSheet.create({

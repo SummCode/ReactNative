@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, StatusBar} from 'react-native';
+import {StyleSheet, Text, FlatList, View, StatusBar} from 'react-native';
 
 import StyleUtils from '../../util/StyleUtils'
 
@@ -15,7 +15,9 @@ export default class SettingPage extends React.Component {
                     translucent={false}
                     barStyle={'light-content'}/>
 
-                <Text>Setting Page</Text>
+                <FlatList>
+
+                </FlatList>
 
             </View>
         );
