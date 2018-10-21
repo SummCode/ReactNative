@@ -15,13 +15,12 @@ import StyleUtils from '../../util/StyleUtils'
 export default class MinePage extends React.Component {
 
     render() {
-        const {navigation} = this.props.navigation;
         return (
             <View style={styles.container}>
                 <StatusBar
                     hidden={false}
                     backgroundColor={'#008CF0'}
-                    translucent={true}
+                    translucent={false}
                     barStyle={'light-content'}/>
 
                 {/* 头部 */}
@@ -126,10 +125,10 @@ const styles = StyleSheet.create({
         height: 180,
         paddingLeft: 15,
         paddingRight: 15,
+        paddingTop:20,
         backgroundColor: '#008CF0'
     },
     titlebar: {
-        paddingTop: 40,
         justifyContent: 'flex-start',
         alignItems: 'center',
         flexDirection: 'row'

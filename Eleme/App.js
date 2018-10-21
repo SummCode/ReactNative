@@ -2,7 +2,7 @@
  * Eleme App 路由配置
  */
 import React from 'react';
-import {Image, StyleSheet, View, BackHandler, AppState, Platform, ToastAndroid} from 'react-native';
+import {Image, StyleSheet, View, BackHandler, AppState, Platform, ToastAndroid, Easing, Animated} from 'react-native';
 import {createStackNavigator, createBottomTabNavigator} from 'react-navigation';
 /**
  * 启动页
@@ -193,6 +193,29 @@ const RootApp = createStackNavigator({
     },
 }, {
     initialRouteName: 'StartUp',
+    transitionConfig: () => ({
+        transitionSpec: {
+            duration: 300,
+            easing: Easing.out(Easing.poly(4)),
+            timing: Animated.timing,
+        },
+        screenInterpolator: sceneProps => {
+            const {layout, position, scene} = sceneProps;
+            const {index} = scene;
+            const Width = layout.initWidth;
+            //沿X轴平移
+            const translateX = position.interpolate({
+                inputRange: [index - 1, index, index + 1],
+                outputRange: [Width, 0, -(Width - 10)],
+            });
+            //透明度
+            const opacity = position.interpolate({
+                inputRange: [index - 1, index - 0.99, index],
+                outputRange: [0, 1, 1],
+            });
+            return {opacity, transform: [{translateX}]};
+        }
+    }),
     navigationOptions: {
         headerStyle: {
             backgroundColor: '#008CF0',
