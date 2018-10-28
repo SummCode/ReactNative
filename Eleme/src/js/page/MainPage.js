@@ -14,7 +14,7 @@ export default class MainPage extends React.Component {
                 <StatusBar
                     hidden={false}
                     backgroundColor={'#008CF0'}
-                    translucent={true}
+                    translucent={false}
                     barStyle={'light-content'} />
 
                 <Text style={StyleUtils.container}>Main Page</Text>

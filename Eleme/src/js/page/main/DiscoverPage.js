@@ -14,7 +14,7 @@ export default class DiscoverPage extends React.Component {
                 <StatusBar
                     hidden={false}
                     backgroundColor={'#008CF0'}
-                    translucent={true}
+                    translucent={false}
                     barStyle={'light-content'} />
 
                 <Text>Discover Page</Text>

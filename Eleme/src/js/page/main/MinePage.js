@@ -50,7 +50,7 @@ export default class MinePage extends React.Component {
                         <Image style={styles.headPortrait}
                                source={require('../../../res/images/img_default_head_portrait.jpg')}/>
                         <View style={styles.userInfo}>
-                            <Text style={styles.userInfoText}>用户呢称</Text>
+                            <Text style={styles.userInfoText}>Summ</Text>
                             <Text style={styles.userInfoText}>176****35</Text>
                         </View>
                         <Image style={styles.titleIcon}
@@ -145,8 +145,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     titleIcon: {
-        width: 18,
-        height: 18,
+        width: 24,
+        height: 24,
     },
     userInfos: {
         height: 80,
